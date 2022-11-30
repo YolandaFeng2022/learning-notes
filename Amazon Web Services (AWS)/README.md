@@ -1,15 +1,15 @@
-# You need to know Amazon Web Services (AWS)
+# What is Amazon Web Services (AWS)
 
 ## What is Cloud Computing?
-Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS).
+Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services(AWS).
 
-## Benefits of cloud computing
+## Benefits of AWS cloud computing
 - Agility
 - Elasticity
 - Cost savings
 - Deploy globally in minutes
 
-## Types of cloud computing
+## Types of AWS cloud computing
 - Infrastructure as a Service (IaaS)
 - Platform as a Service (PaaS)
 - Software as a Service (SaaS)
@@ -21,7 +21,7 @@ Cloud computing is the on-demand delivery of IT resources over the Internet with
 - Networking & Content Delivery (VPC, Route 53, CloudFront, etc.)
 - [Others & All](https://aws.amazon.com/products/?pg=WICC-N&aws-products-all.sort-by=item.additionalFields.productNameLowercase&aws-products-all.sort-order=asc&awsf.re%3AInvent=*all&awsf.Free%20Tier%20Type=*all&awsf.tech-category=*all)
 
-## Key Services (are used in projects)
+## AWS Key Services (are used in projects)
 - **EC2**: [Elastic Compute Cloud](https://aws.amazon.com/ec2/?did=ap_card&trk=ap_card)
 - **S3**: [Simple Storage Service](https://aws.amazon.com/s3/?did=ap_card&trk=ap_card)
 - **Route53**： [53 Scalable domain name system (DNS)](https://aws.amazon.com/route53/?did=ap_card&trk=ap_card)

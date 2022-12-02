@@ -47,3 +47,7 @@
 - Wait time for the first byte from server: server speed
 - Whether is using HTTP/2
 - Images, JavaScript, Css, Fonts
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

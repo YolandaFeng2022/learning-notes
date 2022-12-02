@@ -13,3 +13,7 @@ We can use these parameters to understand what exactly each rendering pattern ha
 - Full CSR
 ![Rendering Patterns](./assets/rendering%20patterns.png)
 ![Rendering Patterns Compares](./assets/Rendering%20Patterns%20Compare.png)
+
+***
+## <<< [Notes List](../README.md)
+***

@@ -116,3 +116,7 @@ JavaScript causes loading block
 - preload ![preload](../assets/CSS%20preload.PNG)
 - disabled ![disabled](../assets/CSS%20disabled.PNG)
 - In-Body CSS Loading ![In-Body](../assets/CSS%20In-Body.PNG)
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

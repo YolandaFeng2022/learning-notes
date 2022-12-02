@@ -88,3 +88,7 @@ Offload a lot of traffic from your web host.
 - Automatic modernization of images with WebP
 - DDoS protection
 - Advanced caching
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

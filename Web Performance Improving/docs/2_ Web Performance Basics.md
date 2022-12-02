@@ -115,3 +115,7 @@
 - Render the initial route as soon as possible
 - Pre-cache remaining assets
 - Lazy load other routes and non-critical assets
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

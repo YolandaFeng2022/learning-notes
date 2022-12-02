@@ -106,3 +106,7 @@ Load images only when you needed
 - Example: Image is close to viewport, User clicks button, Specified event is triggered due to user action
 - Lazy load all media assets below the fold
 - lazysizes - github
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

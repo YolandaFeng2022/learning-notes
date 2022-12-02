@@ -51,3 +51,7 @@
 - dynamic import images according viewport size
 - lazy loading images on demand
 - pre loading when FPS remain time occur
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

@@ -171,3 +171,7 @@ Go to [Test Page - index.html](./test-page/index.html) and try to visible one of
 - [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - `position: fixed;` VS. `position: sticky;`
 - `gaps` and `gutters` to flex and grid
+
+***
+## <<< [Notes List](../README.md)
+***

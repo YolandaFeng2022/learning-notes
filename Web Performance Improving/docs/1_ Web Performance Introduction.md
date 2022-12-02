@@ -108,3 +108,7 @@
   - Better for your Search Engine rankings
   - Better for you (less hosting and traffic expenses)
   - Better for the environment
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

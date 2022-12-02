@@ -51,6 +51,9 @@ Blocking scripts requests before the first image (ABT) are given higher priority
 7. widget?
 8. Promise-Based script loader
 
+***
+## <<< [Notes List](../README.md)
+***
 
 #### Reference
 - [Linkedin Learning](https://www.linkedin.com/learning/developing-for-web-performance/what-is-performance-and-why-is-it-so-important?autoplay=true&resume=false&u=2036388)

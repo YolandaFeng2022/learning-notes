@@ -12,3 +12,11 @@ They are really deserve to be logged down for deep learning and answers querying
 - [JavaScript Design Patterns](https://www.patterns.dev/posts/introduction/)
 - [Rendering Patterns](https://www.patterns.dev/posts/rendering-introduction/)
 - [Performance Patterns](https://www.patterns.dev/posts/loading-sequence/)
+
+## JavaScript Matters
+- MDN
+
+
+***
+## <<< [Notes List](../README.md)
+***

@@ -41,3 +41,7 @@
 - Pick the correct character set
 - Consider deferring font loading by using a matching system font first
 - Cache font styles and font files for the future use
+
+***
+## <<< [Improve Web Performance](../README.md)
+*** 

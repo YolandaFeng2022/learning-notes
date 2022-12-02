@@ -113,11 +113,11 @@ JavaScript causes loading block
 
 ### Deferring noncritical CSS
 
-- preload
+- preload   
   ![preload](../assets/CSS%20preload.PNG)
-- disabled
+- disabled   
   ![disabled](../assets/CSS%20disabled.PNG)
-- In-Body CSS Loading
+- In-Body CSS Loading   
   ![In-Body](../assets/CSS%20In-Body.PNG)
 
 ***

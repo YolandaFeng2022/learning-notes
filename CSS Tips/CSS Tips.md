@@ -1,33 +1,40 @@
 # CSS Tips
 
 ## Normalize or Reset CSS?
+### CSS mormalize/reset resources:
+Go to [Test Page - index.html](./test-page/index.html) and try to visible one of the css then open index.html in browser to see the differences with each other, then select one apply to your project.
+![Test Page - index.html](./assets/test%20page.png)
+### Classic reset articles resolution
+- [Meyer Web for CSS details](https://meyerweb.com/)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
+- [CSS Remedy](https://github.com/jensimmons/cssremedy)
 
-## use Tools to format and standardize your css
+## Use Tools to format and standardize your css
 - [stylelint](https://stylelint.io/)
 - [prettier](https://prettier.io/)
 - [prettier-vscode](https://github.com/prettier/prettier-vscode)
 
 ## About Container
-- The `vm` unit is a bit of blessing
+- The `vw` unit is a bit of blessing
 - Consistent sizing with `box-sizing: border-box`
 - [CSS Logical Box Module](https://elad.medium.com/new-css-logical-properties-bc6945311ce7) properties instead of position
-    ![CSS Logical Box](./CSS%20Logical%20Box.png)
+    ![CSS Logical Box](./assets/CSS%20Logical%20Box.png)
 - Considering [writing-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
 - Align item in center at horizontal and/or vertical
     ```SCSS
-    // resolution 1:
+    // Resolution 1:
     .container {
         display: flex;
         justify-content: center; // horizontal centered
         align-items: center; // vertical centered
     }
-    // resolution 2:
+    // Resolution 2:
     .container {
         display: grid;
         justify-content: center; // horizontal centered
         align-items: center; // vertical centered
     }
-    // resolution 3:
+    // Resolution 3:
     .container {
         display: grid;
         
@@ -52,20 +59,20 @@
         }
     }
     ```
-- use clearfix, fix box collapse with `flow-root`
+- use "clearfix", fix box collapse with `flow-root`
     ```SCSS
-    // resolution 1:
+    // Resolution 1:
     .clear-box {
         float: right;//left
         clear: left;//right,both
     }
 
-    // resolution 2:
+    // Resolution 2:
     .clear-parent {
         overflow: hidden;
     }
 
-    // resolution 3:
+    // Resolution 3:
     .clear-parent {
         display: flow-root;
     }
@@ -89,13 +96,13 @@
     ```
 - truncate text length and numbers of display lines
     ```SCSS
-    // resolution 1:
+    // Resolution 1:
     .title {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    // resolution 2:
+    // Resolution 2:
     .paragraph {
         height: 6.5rem;
         overflow: hidden;
@@ -115,8 +122,9 @@
         color: white
     }
     ```
-- Customize Css
+- customize Css
     ```SCSS
+    // Support color scheme: Dark/Light Mode
     :root {
         --background-color: white;
         --font-color: black;
@@ -136,7 +144,7 @@
         color: var(--font-color);
     }
     ```
-- Color palette `hsla`
+- color palette `hsla`
     - **H**ue： Color Cycle
         - 0/360 Red
         - 60 Yellow

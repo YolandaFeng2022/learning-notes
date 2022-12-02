@@ -3,6 +3,10 @@
 ## Normalize or Reset CSS?
 ### CSS mormalize/reset resources:
 Go to [Test Page - index.html](./test-page/index.html) and try to visible one of the css then open index.html in browser to see the differences with each other, then select one apply to your project.
+- [normalize.css](./test-page/styles/normalize.css)
+- [remedy.css](./test-page/styles/remedy.css)
+- [reset.css](./test-page/styles/reset.css)
+
 ![Test Page - index.html](./assets/test%20page.png)
 ### Classic reset articles resolution
 - [Meyer Web for CSS details](https://meyerweb.com/)
@@ -18,7 +22,7 @@ Go to [Test Page - index.html](./test-page/index.html) and try to visible one of
 - The `vw` unit is a bit of blessing
 - Consistent sizing with `box-sizing: border-box`
 - [CSS Logical Box Module](https://elad.medium.com/new-css-logical-properties-bc6945311ce7) properties instead of position
-    ![CSS Logical Box](./assets/CSS%20Logical%20Box.png)
+![CSS Logical Box](./assets/CSS%20Logical%20Box.png)
 - Considering [writing-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
 - Align item in center at horizontal and/or vertical
     ```SCSS

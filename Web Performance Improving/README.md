@@ -10,6 +10,7 @@ I'll continue on adding more content and notes on this Chapter.
 - [5. Markup and Content](./docs/5_%20Markup%20and%20Content.md)
 - [6. Web Fonts](./docs/6_%20Web%20Fonts.md)
 - [7. Optimize Delivery](./docs/7_%20Optimize%20Delivery.md)
+- [8. Performance Checklist](./docs/8_%20Performance%20Checklist.md)
 
 ## Why is optimal loading difficult to achieve? - problems
 - Sub-Optimal sequencing: The relationship (order, timing) of each critical resources occur

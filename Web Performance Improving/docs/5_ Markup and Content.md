@@ -97,7 +97,7 @@ JavaScript causes loading block
 
   - [uglify.js - npm](https://www.npmjs.com/package/uglify-js)
 
-  - [terser - npm](https://www.npmjs.com/package/terse)
+  - [terser - npm](https://www.npmjs.com/package/terser)
 
 ### Critical CSS
 

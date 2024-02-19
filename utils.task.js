@@ -1,19 +1,24 @@
 // Async tasks relative APIs
 
 /**
- * If some type of result is affected by different tasks
- * Bound and execute the tasks together, shield to protect the steady of the gotten result
- * The result would be more steady if it is visited later
- * @constructor(type: string, span: number, resGetter: null|function)
- * @return Promise
+ * @class TaskShield
+ * If some type of result is affected by different tasks.
+ * Bound and execute the tasks together, and shield to protect the steady of the gotten result.
+ * The result would be more steady if it is visited later.
  */
 class TaskShield {
     #inqueue = [];
     #dequeue = [];
-    
-    constructor(type = 'unset', resGetter = null, span = 500) {
+
+    /**
+     *
+     * @param {String} type - The type of shield
+     * @param {Function | Nullable} resHook - The hook for shielded result
+     * @param {Number} span - The hijack time for getting result
+     */
+    constructor(type = 'unset', resHook = null, span = 500) {
         this.type = type;
-        this.resGetter = resGetter;
+        this.resHook = resHook;
         this.span = span;
     }
 
@@ -46,11 +51,11 @@ class TaskShield {
             return this.#run();
         }
 
-        if (commonRes || !this.resGetter) {
+        if (commonRes || !this.resHook) {
             return this.#dequeueTask(commonRes);
         }
 
-        return Promise.resolve(this.resGetter()).then(res => {
+        return Promise.resolve(this.resHook()).then(res => {
             return this.#resolve({ res });
         });
     }
@@ -67,27 +72,29 @@ class TaskShield {
 }
 
 /**
- *
- * @param {type: string} The type of task shield
- * @param {runner: function} The task execute content
- * @param {callback: function} The callback that been called after all the shield tasks has been executed
- * @returns Promise
+ * Push a new task into the task shield
+ * @function getTaskShield
+ * @param {String} [type] - The type of task shield
+ * @param {Function} [resHook] - The hook for shielded result
+ * @param {Number} [span] - The hijack time for getting result
+ * @returns {TaskShield}
  */
-export const shieldTask = function(type, resGetter, span) {
-    window.top.STEADY_TASKS = window.top.STEADY_TASKS || {};
-    window.top.STEADY_TASKS[type] = window.top.STEADY_TASKS[type] || new TaskShield(type, resGetter, span);
-    return window.top.STEADY_TASKS[type];
+export const getTaskShield = function(type = 'unset', resHook, span) {
+    window.top.TYPED_TASK_SHIELDS = window.top.TYPED_TASK_SHIELDS || {};
+    window.top.TYPED_TASK_SHIELDS[type] = window.top.TYPED_TASK_SHIELDS[type] || new TaskShield(type, resHook, span);
+    return window.top.TYPED_TASK_SHIELDS[type];
 };
 
 /**
- * Make sure the same task only been executed one time in a certain time period
+ * Make sure the same task only been executed one time in a certain time period.
  * During the time period, the task executiong will be suspended.
  * The suspend time will be recounted if encounter another task execution.
  * When the suspend time is timeoff, then the task will be actual executed.
- * @param {context: any} The task execute context and scope
- * @param {task: string || function} The debounced task
- * @param {wait: number} The debounce timespan
- * @param {args array} The arguments which are passed to the concurrent task
+ * @function debounceTask
+ * @param {Object} context - The task execute context and scope
+ * @param {String | Function} task - The debounced task
+ * @param {Number} [wait] - The debounce timespan
+ * @param {Array} [args] - The arguments which are passed to the concurrent task
  */
 export const debounceTask = function(context, task, wait = 100, args = []) {
     context = context || window.top;
@@ -125,9 +132,10 @@ export const debounceTask = function(context, task, wait = 100, args = []) {
 
 /**
  * Control the total count of concurrent asynchronous tasks, start the next task when last task has been completely completed
- * @param {Array<AsyncTask>} tasks: asynchronous task list
- * @param {Integer} limit: The maximum execute count of concurrent asynchronous tasks at one time
- * @returns Promise
+ * @function batchAsyncTasks
+ * @param {Array} tasks - Asynchronous task list
+ * @param {Number} limit - The maximum execute count of concurrent asynchronous tasks at one time
+ * @returns {Promise}
  */
 export const batchAsyncTasks = function(tasks, limit = 5) {
     const results = [];

@@ -8,55 +8,56 @@
  * @return Promise
  */
 class TaskShield {
+    #inqueue = [];
+    #dequeue = [];
+    
     constructor(type = 'unset', resGetter = null, span = 500) {
         this.type = type;
         this.resGetter = resGetter;
         this.span = span;
     }
 
-    inqueue = [];
-    dequeue = [];
     task(runner = () => {}, callback = () => {}) {
-        this.inqueue.push({
+        this.#inqueue.push({
             runner,
             callback
         });
-        return this.__run();
+        return this.#run();
     }
 
-    __run() {
-        if (!this.inqueue.length) {
+    #run() {
+        if (!this.#inqueue.length) {
             return new Promise((res, rej) => {
                 setTimeout(() => {
-                    res(this.__resolve());
+                    res(this.#resolve());
                 }, this.span);
             });
         }
 
-        const task = this.inqueue.shift();
+        const task = this.#inqueue.shift();
         return Promise.resolve(task.runner()).finally(() => {
-            this.dequeue.push(task);
-            return this.__run();
+            this.#dequeue.push(task);
+            return this.#run();
         });
     }
 
-    __resolve(commonRes) {
-        if (this.inqueue.length) {
-            return this.__run();
+    #resolve(commonRes) {
+        if (this.#inqueue.length) {
+            return this.#run();
         }
 
         if (commonRes || !this.resGetter) {
-            return this.__dequeueTask(commonRes);
+            return this.#dequeueTask(commonRes);
         }
 
         return Promise.resolve(this.resGetter()).then(res => {
-            return this.__resolve({ res });
+            return this.#resolve({ res });
         });
     }
 
-    __dequeueTask(commonRes) {
-        const dequeue = this.dequeue.concat();
-        this.dequeue = [];
+    #dequeueTask(commonRes) {
+        const dequeue = this.#dequeue.concat();
+        this.#dequeue = [];
         return Promise.allSettled(dequeue.map(t => {
             if (t.callback) {
                 return commonRes ? t.callback(commonRes.res) : t.callback();
